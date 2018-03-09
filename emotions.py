@@ -14,7 +14,7 @@ from utils.preprocessor import preprocess_input
 # parameters for loading data and images
 emotion_model_path = './models/emotion_model.hdf5'
 emotion_labels = get_labels('fer2013')
-
+#new code will be added after this.
 # hyper-parameters for bounding boxes shape
 frame_window = 10
 emotion_offsets = (20, 40)
