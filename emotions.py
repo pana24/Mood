@@ -94,3 +94,31 @@ while video_capture.isOpened(): # True:
 
 video_capture.release()
 cv2.destroyAllWindows()
+
+print('yo')
+print(*emotion_window)
+
+
+#itemList = ['hi', 'hi', 'hello', 'bye']
+
+counter = {}
+maxItemCount = 0
+for item in emotion_window:
+    try:
+        # Referencing this will cause a KeyError exception
+        # if it doesn't already exist
+        counter[item]
+        # ... meaning if we get this far it didn't happen so
+        # we'll increment
+        counter[item] += 1
+    except KeyError:
+        # If we got a KeyError we need to create the
+        # dictionary key
+        counter[item] = 1
+
+    # Keep overwriting maxItemCount with the latest number,
+    # if it's higher than the existing itemCount
+    if counter[item] > maxItemCount:
+        maxItemCount = counter[item]
+        mostPopularItem = item
+
